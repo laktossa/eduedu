@@ -29,8 +29,14 @@ module.exports = (sequelize, DataTypes) => {
   }),
     User.beforeCreate((value) => {
       const hash = bcrypt.hashSync(value.dataValues.password, 10);
+
       value.dataValues.password = hash
-      console.log(hash);
+      if(value.username[0] === "$") {
+        value.role = "admin"
+      } else {
+        value.role = "user"
+      }
+      
     })
   return User;
 };
