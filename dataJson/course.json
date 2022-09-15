@@ -1,21 +1,21 @@
 [
-    {"name":"Senior Editor","descriptiont":"Asa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.","duration":1,"CategoryId":1,"UserId":1},
+    {"name":"Senior Editor","descriptiont":"Asa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.","duration":1,"CategoryId":1},
 
-    {"name":"Editor","descriptiont":"Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.","duration":2,"CategoryId":1,"UserId":2},
+    {"name":"Editor","descriptiont":"Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.","duration":2,"CategoryId":1},
 
-    {"name":"Librarian","descriptiont":"ndisse potentinMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.","duration":3,"CategoryId":1,"UserId":3},
+    {"name":"Librarian","descriptiont":"ndisse potentinMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.","duration":3,"CategoryId":1},
 
-    {"name":"Food Chemist","descriptiont":"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.","duration":4,"CategoryId":1,"UserId":4},
+    {"name":"Food Chemist","descriptiont":"Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.","duration":4,"CategoryId":1},
 
-    {"name":"Junior Executive","descriptiont":"Duis aliquamm aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.","duration":5,"CategoryId":1,"UserId":5},
+    {"name":"Junior Executive","descriptiont":"Duis aliquamm aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.","duration":5,"CategoryId":1},
 
-    {"name":"Systems Administrator I","descriptiont":"Nsit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.","duration":6,"CategoryId":1,"UserId":6},
+    {"name":"Systems Administrator I","descriptiont":"Nsit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.","duration":6,"CategoryId":1},
 
-    {"name":"Account Representative III","descriptiont":"ec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.","duration":7,"CategoryId":1,"UserId":7},
+    {"name":"Account Representative III","descriptiont":"ec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.","duration":7,"CategoryId":1},
 
-    {"name":"Civil Engineer","descriptiont":" et ultrices posuere cubilia Curae; amet lobortis sapien sapien non mi. Integer ac neque.","duration":8,"CategoryId":1,"UserId":8},
+    {"name":"Civil Engineer","descriptiont":" et ultrices posuere cubilia Curae; amet lobortis sapien sapien non mi. Integer ac neque.","duration":8,"CategoryId":1},
 
-    {"name":"Pharmacist","descriptiont":"Phasellus in felis Sed accumsan felis. Ut at dolor quis odio consequat varius.","duration":9,"CategoryId":1,"UserId":9},
+    {"name":"Pharmacist","descriptiont":"Phasellus in felis Sed accumsan felis. Ut at dolor quis odio consequat varius.","duration":9,"CategoryId":1},
 
-    {"name":"Assistant Media Planner","descriptiont":"Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.","duration":10,"CategoryId":1,"UserId":10}
+    {"name":"Assistant Media Planner","descriptiont":"Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.","duration":10,"CategoryId":1}
 ]
