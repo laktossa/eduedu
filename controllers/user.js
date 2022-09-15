@@ -1,7 +1,7 @@
 class Controlller {
 
     static login(req,res){
-        res.send('ini login')
+        res.render('login')
     }
 
     static add(req,res){
