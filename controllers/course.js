@@ -71,6 +71,20 @@ class Controlller {
         // res.send('ini add')
     }
 
+
+    static nilai(req,res){
+        let id = req.params.Sid
+        let cId = req.params.id
+        Profile.increment({score: 1}, { where: { id } })
+        .then(data => {
+            // res.send(data)
+         res.redirect(`/course/${cId}`)
+        })
+        .catch(err =>{
+            res.send(err)
+        })
+    }
+
 }
 
 module.exports = Controlller
