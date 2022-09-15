@@ -1,30 +1,71 @@
+const { Course,Category,User,Profile} = require('../models/index');
+
 class Controlller {
 
     static listCourse(req,res){
-        res.send('ini nampilin list course')
+        Course.findAll({
+            include : [Category,User]
+        })
+        .then(data => {
+            // res.send(data)
+            // console.log(data);
+            res.render('listCourse',{data})
+        })
+        .catch(err =>{
+            res.send(err)
+        })
     }
 
     static detail(req,res){
-
-        res.send('ini detail')
+        console.log(req.params);
+        let {id} = req.params
+        // let result = {}
+        Course.findAll({
+            include : {
+               model: User,
+               include: Profile
+            },
+            where:{id}
+        })
+        .then(result => {
+            let data = result[0]
+            // res.send(data)
+            res.render('detailCourse',{data})
+        })
+        .catch(err =>{
+            res.send(err)
+        })
+        
     }
 
     static add(req,res){
-        res.send('ini add')
+        Category.findAll({})
+        .then(data => {
+            // let data = result[0]
+            // res.send(data)
+            res.render('addCourse',{data})
+        })
+        .catch(err =>{
+            res.send(err)
+        })
     }
 
     static addP(req,res){
-        res.send('ini add')
+        console.log(req.body);
+        const {name,descriptiont,duration,CategoryId} = req.body
+        
+        Course.create({
+            name,descriptiont,duration,CategoryId
+        })
+        .then(data => {
+            // res.send(data)
+            res.redirect('/course')
+        })
+        .catch(err =>{
+            res.send(err)
+        })
+        // res.send('ini add')
     }
-
-    static edit(req,res){
-        res.send('ini add')
-    }
-
-    static editP(req,res){
-        res.send('ini add')
-    }
-
 
 }
 

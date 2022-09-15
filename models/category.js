@@ -9,6 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
+
+    get selectCorse(){
+      let format = `${this.name}-${this.type}`
+      return format
+    }
+
     static associate(models) {
       // define association here
       Category.hasMany(models.Course)

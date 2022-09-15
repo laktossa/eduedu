@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .header {
+            width: 90vw;
+            margin: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header div {
+            display: inline-flex; 
+            align-items: center;
+        }
+        a {
+            margin: 5px;
+        }
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 25px;
+        }
+        .card1 {
+            padding:10px;
+            width: 50vw;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+            background-color: white;
+            margin: auto;
+        }
+        .card1 div {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .card1 img {
+            margin: 0 auto;
+            width: 200px;
+            height: 160px;
+            object-fit: contain;
+        }
+        .card1 h2 {
+            color: grey;
+            text-align: center;
+        }
+        .card {
+            padding:10px;
+            width: 45vw;
+            height: 10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+            background-color: white;
+            margin: auto;
+        }
+        .card div {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .card img {
+            margin: 0 auto;
+            width: 200px;
+            height: 160px;
+            object-fit: contain;
+        }
+        .card h2 {
+            color: grey;
+            text-align: center;
+        }
+        .btn {
+            margin: 0 20px;
+            padding: 5px 0;
+            width: 80px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: #fba608;
+            color: #000000;
+        }
+        .btn-delete {
+            color: white;
+            background-color: rgb(243, 56, 56);
+        }
+
+        ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         background-color:lightblue;
+       }
+
+       li {
+         float: left;
+       }
+
+       li a {
+         display: block;
+         color: black;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+         font-size: large;
+       }
+
+    </style>
+</head>
+<body style="background-color: lightsteelblue;">
+    <ul>
+        <li><a href="./">Home</a></li>
+    </ul>    
+</br></br></br></br>
+
+   
+        <div class="card">
+            <h2><%=data.name%></h2>
+        </br></br>
+        <div>
+                <h3>Duration : <%=data.duration%></h3>
+            </div>
+        </div>
+        </br></br>
+        <% let result2 = data.Users.map(e => { %>
+            <%  return e.Profile.id %> 
+                 <% }) %>
+    <% let result3 = data.Users.map(e => { %>
+        <%return e.Profile.score%>
+            <% }) %>
+         <div class="card" style="width:30%;height: 20%;">
+            <% const test = [9,8,3,4,5]; %> // variable created by ejs
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
+            <canvas id="myChart" width="400" height="400"></canvas>
+            <script>
+        
+        const ctx = document.getElementById('myChart'); // ini dom nya
+        const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: '<%=test%>',
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+            </script>
+        </div>
+         <!-- konten lain -->
+         <!-- <script src="Mvp.js"></script> -->
+
+            
+            console.log(Mvp);
+       
+        
+        </br></br>
+    <div class="card1">
+        <h4>List Student</h4>
+    </br></br>
+        <table border="1">
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Country</th>
+              <th>Nilai</th>
+            </tr>
+            
+            <% data.Users.forEach(e => { %>
+                    <tr>
+                      <td><%= e.Profile.fullName %></td>
+                      <td><%= e.Profile.age %></td>
+                      <td><%= e.Profile.hometown %></td>
+                      <td><%= e.Profile.nilai %></td>
+                    </tr>
+                  
+            <% }) %>
+        </table>
+        </div>
+    
+    </br></br></br></br>
+    
+</body>
+
+</html>

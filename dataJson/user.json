@@ -1,21 +1,21 @@
 [
-    {"username":"lbough0","email":"lkerwood0@myspace.com","password":"CZKD0U","role":1},
+    {"username":"lbough0","email":"lkerwood0@myspace.com","password":"CZKD0U","role":1,"CourseId":1},
 
-    {"username":"nbristow1","email":"dyerby1@earthlink.net","password":"uyyCzz967","role":2},
+    {"username":"nbristow1","email":"dyerby1@earthlink.net","password":"uyyCzz967","role":2,"CourseId":1},
 
-    {"username":"chuke2","email":"mbecker2@hud.gov","password":"gaur46ajy","role":3},
+    {"username":"chuke2","email":"mbecker2@hud.gov","password":"gaur46ajy","role":3,"CourseId":1},
 
-    {"username":"rcheevers3","email":"kcran3@imdb.com","password":"sxmUsDGo","role":4},
+    {"username":"rcheevers3","email":"kcran3@imdb.com","password":"sxmUsDGo","role":4,"CourseId":1},
 
-    {"username":"mvearnals4","email":"jgierth4@google.de","password":"mGGRm5Ri9K","role":5},
+    {"username":"mvearnals4","email":"jgierth4@google.de","password":"mGGRm5Ri9K","role":5,"CourseId":1},
 
-    {"username":"ckeaveny5","email":"ssussams5@free.fr","password":"5CdubI1HL","role":6},
+    {"username":"ckeaveny5","email":"ssussams5@free.fr","password":"5CdubI1HL","role":6,"CourseId":1},
 
-    {"username":"mbatram6","email":"efilyushkin6@wiley.com","password":"TuACDLP0pbU2","role":7},
+    {"username":"mbatram6","email":"efilyushkin6@wiley.com","password":"TuACDLP0pbU2","role":7,"CourseId":1},
 
-    {"username":"acavendish7","email":"rtoothill7@dyndns.org","password":"1tQJLmrgZDvP","role":8},
+    {"username":"acavendish7","email":"rtoothill7@dyndns.org","password":"1tQJLmrgZDvP","role":8,"CourseId":1},
 
-    {"username":"ofolger8","email":"tcaustick8@g.co","password":"eFYUksBTV","role":9},
+    {"username":"ofolger8","email":"tcaustick8@g.co","password":"eFYUksBTV","role":9,"CourseId":1},
 
-    {"username":"gdregan9","email":"pinkles9@ustream.tv","password":"VsmE8vdTOB","role":10}
+    {"username":"gdregan9","email":"pinkles9@ustream.tv","password":"VsmE8vdTOB","role":10,"CourseId":1}
 ]
