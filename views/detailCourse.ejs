@@ -131,8 +131,6 @@
         <li><a href="./">Home</a></li>
     </ul>    
 </br></br></br></br>
-
-   
         <div class="card">
             <h2><%=data.name%></h2>
         </br></br>
@@ -148,7 +146,7 @@
         <%return e.Profile.score%>
             <% }) %>
          <div class="card" style="width:30%;height: 20%;">
-            <% const test = [9,8,3,4,5]; %> // variable created by ejs
+            <% const test = [result3[0],result3[1],result3[2],result3[3],result3[4],result3[5],result3[6],result3[7],result3[8],result3[9]]; %>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         
             <canvas id="myChart" width="400" height="400"></canvas>
@@ -158,9 +156,9 @@
         const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['1','','2','','3','','4','','5','','6','','7','','8','','9','','10',''],
         datasets: [{
-            label: '# of Votes',
+            label: '# nilai siswa',
             data: '<%=test%>',
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -193,9 +191,6 @@
         </div>
          <!-- konten lain -->
          <!-- <script src="Mvp.js"></script> -->
-
-            
-            console.log(Mvp);
        
         
         </br></br>
@@ -208,6 +203,7 @@
               <th>Age</th>
               <th>Country</th>
               <th>Nilai</th>
+              <th>Action</th>
             </tr>
             
             <% data.Users.forEach(e => { %>
@@ -215,7 +211,8 @@
                       <td><%= e.Profile.fullName %></td>
                       <td><%= e.Profile.age %></td>
                       <td><%= e.Profile.hometown %></td>
-                      <td><%= e.Profile.nilai %></td>
+                      <td><%= e.Profile.score %></td>
+                      <td><a href="/<%=data.id%>/tes/<%=e.id%>/score/<%= e.Profile.id %>"><button>Tes</button></a></td>
                     </tr>
                   
             <% }) %>

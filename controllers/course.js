@@ -8,7 +8,6 @@ class Controlller {
         })
         .then(data => {
             // res.send(data)
-            // console.log(data);
             res.render('listCourse',{data})
         })
         .catch(err =>{
@@ -62,7 +61,12 @@ class Controlller {
             res.redirect('/course')
         })
         .catch(err =>{
-            res.send(err)
+            let error = err
+            // console.log(err.name);
+            if (err.name === "SequelizeValidationError") {
+                error = err.errors.map(el => el.message)
+            }
+            res.send(error)
         })
         // res.send('ini add')
     }
