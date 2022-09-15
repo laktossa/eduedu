@@ -1,17 +1,46 @@
+const { User } = require("../models/index");
+const user = require("../models/user");
+
+const bcrypt = require('bcrypt');
+
 class Controlller {
 
-    static login(req,res){
+    static loginPage(req, res) {
         res.render('login')
     }
 
-    static add(req,res){
+    static login(req, res) {
+        const { username, password } = req.body;
 
-        res.send('ini add')
+        User.findOne({ where: { username } })
+            .then((result) => {
+                if(bcrypt.compareSync(password, result.password)) {
+                    res.render('landingPageUser')
+                } else {
+                    res.send("salahpass")
+                }
+                // console.log(bcrypt.compareSync(password, result.password));
+            }).catch((err) => {
+                console.log(err);
+                res.send(err)
+
+            });
+
     }
 
-    static addP(req,res){
+    static addPage(req, res) {
+        res.render('addUser')
+    }
 
-        res.send('ini add')
+    static add(req, res) {
+        const { username, email, password } = req.body;
+
+        User.create({ username, email, password })
+        .then((result) => {
+            res.redirect('/')
+        }).catch((err) => {
+            res.send(err)
+        });
     }
 
 

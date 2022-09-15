@@ -20,7 +20,7 @@ module.exports = {
       background: {
         type: Sequelize.STRING
       },
-      nilai: {
+      score: {
         type: Sequelize.INTEGER
       },
       createdAt: {
