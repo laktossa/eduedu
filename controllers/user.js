@@ -1,7 +1,6 @@
-const { User } = require("../models/index");
-const user = require("../models/user");
+const { User, Profile } = require("../models/index");
+const checkPass = require("../helpers/comparePass");
 
-const bcrypt = require('bcrypt');
 
 class Controlller {
 
@@ -12,20 +11,30 @@ class Controlller {
     static login(req, res) {
         const { username, password } = req.body;
 
+
         User.findOne({ where: { username } })
             .then((result) => {
-                if(bcrypt.compareSync(password, result.password)) {
-                    res.redirect('/course')
+
+                if (checkPass(password, result.password)) {
+                    req.session.data = { UserId: result.id, role: result.role }
+                    res.render('landingPage', { data: req.session.data })
                 } else {
                     res.send("salahpass")
                 }
-                // console.log(bcrypt.compareSync(password, result.password));
             }).catch((err) => {
-                console.log(err);
                 res.send(err)
-
             });
 
+    }
+
+    static logout(req, res) {
+        req.session.destroy((err) => {
+            if (err) {
+                res.send(err)
+            } else {
+                res.redirect('/')
+            }
+        })
     }
 
     static addPage(req, res) {
@@ -36,11 +45,15 @@ class Controlller {
         const { username, email, password } = req.body;
 
         User.create({ username, email, password })
-        .then((result) => {
-            res.redirect('/')
-        }).catch((err) => {
-            res.send(err)
-        });
+            .then((result) => {
+                return Profile.create({ UserId: result.id })
+            })
+            .then((result) => {
+                res.redirect('/user/login')
+            })
+            .catch((err) => {
+                res.send(err)
+            });
     }
 
 
