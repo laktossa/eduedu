@@ -10,12 +10,14 @@ class Controlller {
 
     static login(req, res) {
         const { username, password } = req.body;
-
-
         User.findOne({ where: { username } })
             .then((result) => {
 
                 if (checkPass(password, result.password)) {
+                    req.session.UserId = result.id
+                    // console.log(result);
+                    // req.session.role= result.dataValues.role
+                    // console.log( req.session.role,req.session.UserId);
                     req.session.data = { UserId: result.id, role: result.role }
                     res.render('landingPage', { data: req.session.data })
                 } else {

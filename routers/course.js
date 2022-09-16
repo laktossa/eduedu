@@ -2,23 +2,23 @@ const Controlller = require('../controllers/course');
 const router = require('express').Router();
 
 
-router.use((req, res, next) => {
-    if (req.session.userId) {
-        next()
-    } else {
-        res.redirect('/home')
-    }
-})
+// router.use((req, res, next) => {
+//     if (req.session.userId) {
+//         next()
+//     } else {
+//         res.redirect('/course')
+//     }
+// })
 
 router.get('/',Controlller.listCourse)
 
-router.use((req, res, next) => {
-    if (req.session.userId) {
-        next()
-    } else {
-        res.redirect('/home')
-    }
-})
+// router.use((req, res, next) => {
+//     if (req.session.userId) {
+//         next()
+//     } else {
+//         res.redirect('/course')
+//     }
+// })
 router.get('/add',Controlller.add)
 router.post('/add',Controlller.addP)
 

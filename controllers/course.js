@@ -6,7 +6,7 @@ class Controlller {
     static listCourse(req,res){
         // console.log(req.query);
 
-        console.log(req.session)
+        // console.log(req.session)
 
         let {search} = req.query
         let option = {
@@ -30,7 +30,7 @@ class Controlller {
     }
 
     static detail(req,res){
-        console.log(req.params);
+        // console.log(req.params);
         let {id} = req.params
         // let result = {}
         Course.findAll({
