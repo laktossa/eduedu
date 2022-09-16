@@ -14,6 +14,7 @@ class Controlller {
 
         User.findOne({ where: { username } })
             .then((result) => {
+
                 if (checkPass(password, result.password)) {
                     req.session.data = { UserId: result.id, role: result.role }
                     res.render('landingPage', { data: req.session.data })

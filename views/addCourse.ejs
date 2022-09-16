@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <style>
         * {
             margin: 0px;
@@ -30,26 +30,6 @@
             padding: 20px;
             gap: 25px;
         }
-        .card2 {
-            padding: 20px;
-            width: 20vw;
-            height: 3vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
-            background-color: lightblue;
-            margin: auto;
-        }
-        .card2 div {
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-        }
-
         .card {
             padding:50px;
             width: 40vw;
@@ -93,7 +73,6 @@
             color: white;
             background-color: rgb(243, 56, 56);
         }
-
         ul {
          list-style-type: none;
          margin: 0;
@@ -116,44 +95,32 @@
        }
     </style>
 </head>
-<body style="background-color: lightsteelblue;">
-    
+<body>
     <ul>
         <li><a href="./">Home</a></li>
-        <li><a href="/course/add">Add Course</a></li>
     </ul>    
-</br></br>
-        
-<div class="card2">
-    <form action="/course" method="get">
-        <input type="text" placeholder="Search" name="search" />
-        <input type="submit" value="submit" />
-    </form>
-</div>
-
-
-</br></br>
-    <% data.forEach(e => { %>
-        <div class="card">
-            <h2><%=e.name%></h2>
-            <div>
-                <h3><%=e.descriptiont%></h3>
-            </div>
-           
-        </br></br>
-        <div>
-                <h3>Duration : <%=e.duration%> week</h3>
-            </div>
+</br></br></br></br>
+    <div class="card">
+    <form action="/course/add" method="post">
+        <h2>Name</h2>
+        <input type="text" name="name">
+        <h2>Descriptiont</h2>
+        <textarea name="descriptiont" placeholder="input heree" rows="5" cols="40"></textarea>
+        <h2>Doration</h2>
+        <input type="number" name="duration">
+        <h2>Category</h2>
+        <select name="CategoryId">
+            <option value="" selected>---select option---</option>
+            <% data.forEach(e => { %>
+                <option value="<%=e.id  %>"><%= e.selectCorse %></option> 
+            <% }) %>
             
-            <div> 
-            <h3>Category : <%=e.Category.name%></h3>
-        </div>
-    </br>
-            <a class="btn btn-delete" href="/course/<%= e.id %>/">Detail</a>
-        </br>
-            <a href="/course/<%= e.id %>/delete">Delete</a>
-        </div>
-    </br></br></br></br>
-    <% }) %>
+        </select>
+
+    </br></br>
+        <input type="submit" value="submit">
+    </form>
+    
+</div>
 </body>
 </html>
