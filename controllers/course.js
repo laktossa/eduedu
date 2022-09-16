@@ -1,11 +1,25 @@
 const { Course,Category,User,Profile} = require('../models/index');
+const {Op} = require('sequelize');
 
 class Controlller {
 
     static listCourse(req,res){
-        Course.findAll({
-            include : [Category,User]
-        })
+        // console.log(req.query);
+
+        console.log(req.session)
+
+        let {search} = req.query
+        let option = {
+            include:[Category,User]
+        }
+
+        if (search) {
+            option.where = {
+                name :{[Op.iLike] : `%${search}%` }
+            }
+        }
+
+        Course.findAll(option)
         .then(data => {
             // res.send(data)
             res.render('listCourse',{data})
@@ -79,6 +93,21 @@ class Controlller {
         .then(data => {
             // res.send(data)
          res.redirect(`/course/${cId}`)
+        })
+        .catch(err =>{
+            res.send(err)
+        })
+    }
+
+
+    static delete(req,res){
+        let id = req.params.id
+        Course.destroy({
+            where :{id}
+        })
+        .then(data => {
+            // res.send(data)
+         res.redirect(`/course`)
         })
         .catch(err =>{
             res.send(err)

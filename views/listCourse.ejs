@@ -30,6 +30,26 @@
             padding: 20px;
             gap: 25px;
         }
+        .card2 {
+            padding: 20px;
+            width: 20vw;
+            height: 3vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+            background-color: lightblue;
+            margin: auto;
+        }
+        .card2 div {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
         .card {
             padding:50px;
             width: 40vw;
@@ -104,6 +124,14 @@
     </ul>    
 </br></br>
         
+<div class="card2">
+    <form action="/course" method="get">
+        <input type="text" placeholder="Search" name="search" />
+        <input type="submit" value="submit" />
+    </form>
+</div>
+
+
 </br></br>
     <% data.forEach(e => { %>
         <div class="card">
@@ -114,13 +142,16 @@
            
         </br></br>
         <div>
-                <h3>Duration : <%=e.duration%> day</h3>
+                <h3>Duration : <%=e.duration%> week</h3>
             </div>
             
             <div> 
             <h3>Category : <%=e.Category.name%></h3>
         </div>
+    </br>
             <a class="btn btn-delete" href="/course/<%= e.id %>/">Detail</a>
+        </br>
+            <a href="/course/<%= e.id %>/delete">Delete</a>
         </div>
     </br></br></br></br>
     <% }) %>

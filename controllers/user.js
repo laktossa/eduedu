@@ -15,7 +15,7 @@ class Controlller {
         User.findOne({ where: { username } })
             .then((result) => {
                 if(bcrypt.compareSync(password, result.password)) {
-                    res.render('landingPageUser')
+                    res.redirect('/course')
                 } else {
                     res.send("salahpass")
                 }
